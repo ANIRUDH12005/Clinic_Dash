@@ -1,0 +1,266 @@
+/* ============================================
+   PAGE BACKGROUND
+============================================ */
+.notifications-bg {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+
+  background-image: url('../assets/leaves-bg.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* ============================================
+   MAIN CONTAINER (GREEN GLASS)
+============================================ */
+.notifications-page {
+  width: 92%;
+  max-width: 950px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 26px;
+
+  background: rgba(247, 249, 247, 0.55);  /* Soft green glass */
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
+  position: relative;
+  animation: slideUp 0.7s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================
+   FLOATING BACKGROUND BELL
+============================================ */
+.bell-background {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 300px;
+  opacity: 0.05;
+  color: #072107;
+  pointer-events: none;
+  animation: floatBell 6s ease-in-out infinite;
+}
+
+@keyframes floatBell {
+  0% { transform: translate(-50%, -5%) rotate(0deg); }
+  50% { transform: translate(-50%, -9%) rotate(5deg); }
+  100% { transform: translate(-50%, -5%) rotate(0deg); }
+}
+
+
+/* ============================================
+   TITLE WITH BELL ICON
+============================================ */
+.notifications-title {
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  color: #104410;
+  margin-bottom: 30px;
+}
+
+.title-bell {
+  font-size: 28px;
+  margin-right: 10px;
+  color: #104410;
+}
+
+
+/* ============================================
+   FILTER TABS
+============================================ */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.filter-tabs button {
+  padding: 8px 22px;
+  border-radius: 12px;
+  border: none;
+  background: #dff6e0;
+  color: #164816;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.filter-tabs .active {
+  background: #073407;
+  color: white;
+}
+
+
+/* ============================================
+   LOADING RING
+============================================ */
+.loading-ring {
+  margin: 40px auto;
+  width: 45px;
+  height: 45px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #213d21;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* ============================================
+   NOTIFICATION CARD
+============================================ */
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.notification-card {
+  padding: 1.6rem;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(15px) scale(0.98);
+  animation: fadeCard 0.6s ease forwards;
+}
+
+@keyframes fadeCard {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+/* Hover effect */
+.notification-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+
+/* ============================================
+   NEW NOTIFICATION PULSE DOT
+============================================ */
+.pulse-dot {
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  width: 14px;
+  height: 14px;
+  background: #ff4747;
+  border-radius: 50%;
+  animation: pulse 1.1s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  80% { transform: scale(1.7); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+/* ============================================
+   CARD HEADER (Title + Time + Close)
+============================================ */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.right-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.time {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.dismiss-btn {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dismiss-btn:hover {
+  color: #ff4747;
+  transform: scale(1.2);
+}
+
+
+/* ============================================
+   MESSAGE TEXT
+============================================ */
+.notification-card p {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+
+/* ============================================
+   ADD NEW BUTTON
+============================================ */
+.add-new-btn {
+  margin: 25px auto 0;
+  display: block;
+  background: #163916;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s ease;
+}
+
+.add-new-btn:hover {
+  transform: scale(1.05);
+  background: #3c8b3c;
+}
+
+
+/* ============================================
+   EMPTY STATE
+============================================ */
+.empty-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.empty-bell {
+  font-size: 120px;
+  color: #e9ede9;
+  opacity: 0.8;
+}

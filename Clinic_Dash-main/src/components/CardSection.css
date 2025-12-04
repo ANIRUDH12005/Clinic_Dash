@@ -1,0 +1,88 @@
+.cards-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 15px;
+
+  padding: 20px;
+  width: 100%;
+
+  flex-wrap: nowrap;
+}
+
+/* Smaller Card Size */
+.flip-card {
+  flex: 0 0 200px;   /* WAS 260px – now smaller */
+  height: 330px;     /* WAS 420px – reduced */
+  perspective: 1000px;
+}
+
+/* Flip inner */
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT + BACK */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.12);
+  backface-visibility: hidden;
+}
+
+.flip-back {
+  padding: 16px;
+  transform: rotateY(180deg);
+}
+
+/* Smaller Image */
+.card-media img {
+  width: 100%;
+  height: 140px;     /* WAS 200px */
+  object-fit: cover;
+}
+
+/* Compact title */
+.card-title {
+  text-align: center;
+  font-size: 16px;   /* reduced */
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+/* Smaller text */
+.card-desc {
+  font-size: 12px;
+  text-align: center;
+  padding: 0 10px;
+  line-height: 1.3;
+}
+
+/* Smaller Button */
+.btn-small {
+  display: block;
+  margin: 12px auto 0;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  background: #1b5e20;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-small:hover {
+  background: #124216;
+}

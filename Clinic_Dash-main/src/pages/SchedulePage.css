@@ -1,0 +1,84 @@
+.schedule-container {
+  margin-left: 240px;
+  padding: 30px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.schedule-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+.schedule-subtitle {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.schedule-actions {
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  padding: 12px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Table */
+.schedule-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th {
+  background: #e8f5e9;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #1b5e20;
+}
+
+.schedule-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Status badges */
+.status {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status.scheduled {
+  background-color: #1976d2;
+}
+
+.status.completed {
+  background-color: #2e7d32;
+}
+
+.status.cancelled {
+  background-color: #d32f2f;
+}
